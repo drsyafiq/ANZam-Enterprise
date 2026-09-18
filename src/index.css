@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #121316;
+    color: #F7F5ED;
+  }
+}
+
+/* Accessibility: Ensure high contrast focus outlines for keyboard users */
+:focus-visible {
+  outline: 3px solid #dfb74a !important;
+  outline-offset: 3px !important;
+}
