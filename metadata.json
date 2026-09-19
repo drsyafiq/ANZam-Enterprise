@@ -1,6 +1,6 @@
 {
   "name": "ANZam Enterprise",
-  "description": "Perkhidmatan renovasi rumah, kedai dan kerja perpaipan oleh ANZam Enterprise. Hubungi kami untuk sebut harga mengikut skop kerja.",
+  "description": "Perkhidmatan renovasi rumah, kedai, kerja perpaipan dan pendawaian elektrik (wiring) oleh ANZam Enterprise. Hubungi kami untuk sebut harga mengikut skop kerja.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

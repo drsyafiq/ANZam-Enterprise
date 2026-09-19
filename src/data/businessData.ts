@@ -60,9 +60,26 @@ export const SERVICES_DATA: ServiceItem[] = [
     scopeNotice: 'Harga mengikut skop kerja',
     tag: 'Ruang & Plaster',
   },
+  {
+    id: 'pendawaian-elektrik-wiring',
+    title: 'Pendawaian Elektrik (Wiring)',
+    description: 'Kerja pendawaian dan penarikan kabel elektrik untuk punca lampu (downlight), soket palam kuasa, suis, dan mata kipas siling di rumah dan kedai.',
+    category: 'Pendawaian Elektrik',
+    scopeNotice: 'Harga mengikut skop kerja',
+    tag: 'Elektrik & Wiring',
+  },
 ];
 
 export const PORTFOLIO_DATA: PortfolioItem[] = [
+  {
+    id: 'pendawaian-elektrik',
+    title: 'Pendawaian Elektrik Siling & Mata Lampu',
+    description: 'Kerja penarikan dan penyediaan kabel pendawaian elektrik pada siling plaster untuk punca lampu downlight dan kipas di tapak projek.',
+    imageUrl: '/images/electrical_wiring_work.jpg',
+    category: 'Pendawaian Elektrik',
+    orientation: 'portrait',
+    altText: 'Kabel pendawaian elektrik bergantungan pada lubang siling plaster sedia untuk pemasangan lampu downlight dan kipas',
+  },
   {
     id: 'kaunter-marmar',
     title: 'Kaunter Kemasan Corak Marmar',

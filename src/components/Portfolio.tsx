@@ -4,28 +4,37 @@ import { PORTFOLIO_DATA } from '../data/businessData';
 import LightboxModal from './LightboxModal';
 
 interface PortfolioProps {
-  onOpenModalIndex?: number | null;
-  onCloseModal?: () => void;
+  externalIndex?: number | null;
+  onSelectIndex?: (index: number | null) => void;
 }
 
-export default function Portfolio({ onOpenModalIndex, onCloseModal }: PortfolioProps) {
+export default function Portfolio({ externalIndex, onSelectIndex }: PortfolioProps) {
   const [internalIndex, setInternalIndex] = useState<number | null>(null);
 
-  const activeIndex = onOpenModalIndex !== undefined ? onOpenModalIndex : internalIndex;
+  // Active index evaluates externalIndex if it is a valid number, otherwise internalIndex
+  const activeIndex = typeof externalIndex === 'number' ? externalIndex : internalIndex;
 
   const handleOpen = (index: number) => {
     setInternalIndex(index);
+    if (onSelectIndex) {
+      onSelectIndex(index);
+    }
   };
 
   const handleClose = () => {
     setInternalIndex(null);
-    if (onCloseModal) onCloseModal();
+    if (onSelectIndex) {
+      onSelectIndex(null);
+    }
   };
 
   const handlePrev = () => {
     if (activeIndex !== null) {
       const nextIdx = (activeIndex - 1 + PORTFOLIO_DATA.length) % PORTFOLIO_DATA.length;
       setInternalIndex(nextIdx);
+      if (onSelectIndex) {
+        onSelectIndex(nextIdx);
+      }
     }
   };
 
@@ -33,6 +42,9 @@ export default function Portfolio({ onOpenModalIndex, onCloseModal }: PortfolioP
     if (activeIndex !== null) {
       const nextIdx = (activeIndex + 1) % PORTFOLIO_DATA.length;
       setInternalIndex(nextIdx);
+      if (onSelectIndex) {
+        onSelectIndex(nextIdx);
+      }
     }
   };
 
@@ -48,7 +60,7 @@ export default function Portfolio({ onOpenModalIndex, onCloseModal }: PortfolioP
             Portfolio Kerja Kami
           </h2>
           <p className="text-[20px] leading-[1.6] text-[#dedad0]">
-            Berikut merupakan foto kerja sebenar di tapak projek merangkumi kerja bumbung, kalis air, pertukangan kaunter dan pemasangan dinding partisi.
+            Berikut merupakan foto kerja sebenar di tapak projek merangkumi pendawaian elektrik (wiring), bumbung, kalis air, pertukangan kaunter dan pemasangan dinding partisi.
           </p>
         </div>
 

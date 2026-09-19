@@ -21,13 +21,13 @@ export default function BrandLogo({ size = 'md', className = '', showText = true
     <div className={`flex items-center gap-3.5 ${className}`}>
       {/* White badge with object-fit: contain preserving exact proportions, lettering and artwork */}
       <div
-        className={`${badgeSizes[size]} bg-white rounded-full p-1.5 shadow-md flex items-center justify-center border-2 border-[#dfb74a] ring-2 ring-black/20 shrink-0 overflow-hidden`}
+        className={`${badgeSizes[size]} bg-white rounded-full p-1 shadow-md flex items-center justify-center border border-[#dfb74a]/70 shrink-0 overflow-hidden`}
         aria-hidden="true"
       >
         <img
-          src="/images/anzam_logo.jpg"
+          src="/images/anzam_logo.jpg?v=3"
           alt="Logo Rasmi ANZam Enterprise"
-          className={`${imageSizes[size]} object-contain`}
+          className="w-full h-full object-contain rounded-full"
           referrerPolicy="no-referrer"
           loading="eager"
         />

@@ -51,10 +51,10 @@ export default function App() {
         {/* 4. Servis & Pakej */}
         <Services onSelectService={handleSelectService} />
 
-        {/* 5. Portfolio - All 5 authentic project photos with accessible lightbox */}
+        {/* 5. Portfolio - All authentic project photos with accessible lightbox */}
         <Portfolio
-          onOpenModalIndex={lightboxIndex}
-          onCloseModal={() => setLightboxIndex(null)}
+          externalIndex={lightboxIndex}
+          onSelectIndex={(idx) => setLightboxIndex(idx)}
         />
 
         {/* 6. Proses Pertanyaan - 4 clear steps */}

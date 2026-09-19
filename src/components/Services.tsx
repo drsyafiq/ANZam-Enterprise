@@ -1,4 +1,4 @@
-import { Home, Droplets, Hammer, Layers, LayoutGrid, ShieldAlert, MessageCircle, ArrowDown } from 'lucide-react';
+import { Home, Droplets, Hammer, Layers, LayoutGrid, ShieldAlert, Zap, MessageCircle, ArrowDown } from 'lucide-react';
 import { SERVICES_DATA, BUSINESS_CONFIG } from '../data/businessData';
 import { ServiceItem } from '../types';
 
@@ -21,6 +21,8 @@ export default function Services({ onSelectService }: ServicesProps) {
         return <Hammer className="w-8 h-8 text-[#dfb74a]" aria-hidden="true" />;
       case 'pemasangan-partisi':
         return <LayoutGrid className="w-8 h-8 text-[#dfb74a]" aria-hidden="true" />;
+      case 'pendawaian-elektrik-wiring':
+        return <Zap className="w-8 h-8 text-[#dfb74a]" aria-hidden="true" />;
       default:
         return <Hammer className="w-8 h-8 text-[#dfb74a]" aria-hidden="true" />;
     }

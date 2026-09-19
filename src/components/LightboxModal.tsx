@@ -46,10 +46,13 @@ export default function LightboxModal({
       role="dialog"
       aria-modal="true"
       aria-label={`Paparan foto penuh: ${currentItem.title}`}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-2 sm:p-4 md:p-6"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-2 sm:p-4 md:p-6 cursor-zoom-out"
     >
       {/* Top Bar: Counter & Close Button */}
-      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-auto">
         <div className="bg-[#181920]/90 text-[#F7F5ED] px-4 py-2 rounded-full border border-[#dfb74a]/40 text-[17px] font-semibold">
           Foto {currentIndex + 1} daripada {items.length}
         </div>
@@ -57,7 +60,7 @@ export default function LightboxModal({
         <button
           type="button"
           onClick={onClose}
-          className="p-3 bg-[#22242c] hover:bg-[#2e313c] text-white hover:text-[#dfb74a] rounded-full border border-[#dfb74a]/40 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors"
+          className="p-3 bg-[#22242c] hover:bg-[#2e313c] text-white hover:text-[#dfb74a] rounded-full border border-[#dfb74a]/40 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors cursor-pointer"
           aria-label="Tutup paparan foto penuh"
           id="lightbox-close-btn"
         >
@@ -68,8 +71,11 @@ export default function LightboxModal({
       {/* Navigation Buttons: Previous */}
       <button
         type="button"
-        onClick={onPrev}
-        className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-3.5 bg-[#1a1b22]/90 hover:bg-[#282a34] text-white hover:text-[#dfb74a] rounded-full border border-[#dfb74a]/40 shadow-xl min-w-[52px] min-h-[52px] flex items-center justify-center z-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors"
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrev();
+        }}
+        className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-3.5 bg-[#1a1b22]/90 hover:bg-[#282a34] text-white hover:text-[#dfb74a] rounded-full border border-[#dfb74a]/40 shadow-xl min-w-[52px] min-h-[52px] flex items-center justify-center z-20 focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors cursor-pointer"
         aria-label="Lihat foto sebelumnya"
         id="lightbox-prev-btn"
       >
@@ -77,12 +83,15 @@ export default function LightboxModal({
       </button>
 
       {/* Main Image Container: Full view WITHOUT CROPPING */}
-      <div className="max-w-5xl max-h-[85vh] w-full flex flex-col items-center justify-center p-2">
-        <div className="relative flex items-center justify-center w-full max-h-[68vh] overflow-hidden rounded-xl bg-black/50 border border-[#dfb74a]/30">
+      <div
+        className="max-w-5xl max-h-[88vh] w-full flex flex-col items-center justify-center p-2 cursor-default pointer-events-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative flex items-center justify-center w-full max-h-[70vh] overflow-hidden rounded-xl bg-black/60 border border-[#dfb74a]/30">
           <img
             src={currentItem.imageUrl}
             alt={currentItem.altText}
-            className="max-h-[66vh] max-w-full w-auto h-auto object-contain rounded-lg"
+            className="max-h-[68vh] max-w-full w-auto h-auto object-contain rounded-lg shadow-2xl"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -104,8 +113,11 @@ export default function LightboxModal({
       {/* Navigation Buttons: Next */}
       <button
         type="button"
-        onClick={onNext}
-        className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-3.5 bg-[#1a1b22]/90 hover:bg-[#282a34] text-white hover:text-[#dfb74a] rounded-full border border-[#dfb74a]/40 shadow-xl min-w-[52px] min-h-[52px] flex items-center justify-center z-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors"
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
+        className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-3.5 bg-[#1a1b22]/90 hover:bg-[#282a34] text-white hover:text-[#dfb74a] rounded-full border border-[#dfb74a]/40 shadow-xl min-w-[52px] min-h-[52px] flex items-center justify-center z-20 focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors cursor-pointer"
         aria-label="Lihat foto seterusnya"
         id="lightbox-next-btn"
       >

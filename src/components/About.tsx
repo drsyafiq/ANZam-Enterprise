@@ -22,11 +22,11 @@ export default function About() {
           {/* Factual Content - 20px body font, 1.6 line height */}
           <div className="pt-8 space-y-6 text-[#dedad0] text-[20px] leading-[1.6]">
             <p>
-              <strong className="text-white font-bold">ANZam Enterprise</strong> merupakan penyedia perkhidmatan pertukangan renovasi dan penyelenggaraan bangunan yang menumpukan kepada kerja-kerja ubah suai kediaman (rumah), premis perniagaan (kedai) serta kerja-kerja perpaipan.
+              <strong className="text-white font-bold">ANZam Enterprise</strong> merupakan penyedia perkhidmatan pertukangan renovasi dan penyelenggaraan bangunan yang menumpukan kepada kerja-kerja ubah suai kediaman (rumah), premis perniagaan (kedai), perpaipan serta pendawaian elektrik (wiring).
             </p>
 
             <p>
-              Kami mengutamakan pendekatan yang praktikal dan telus: setiap projek dinilai mengikut skop kerja yang dipersetujui bersama pelanggan, tanpa sebarang kos terselindung atau janji yang tidak berasas. Daripada kerja pembaikan genting bumbung yang bocor, aplikasi kalis air di kawasan tangki, hinggalah kepada pembinaan struktur kaunter perniagaan dan dinding partisi, kami komited memberikan kerja yang kemas dan berfungsi sebaiknya.
+              Kami mengutamakan pendekatan yang praktikal dan telus: setiap projek dinilai mengikut skop kerja yang dipersetujui bersama pelanggan, tanpa sebarang kos terselindung atau janji yang tidak berasas. Daripada pendawaian elektrik punca lampu dan suis, kerja pembaikan genting bumbung yang bocor, aplikasi kalis air di kawasan tangki, hinggalah kepada pembinaan struktur kaunter perniagaan dan dinding partisi, kami komited memberikan kerja yang kemas dan berfungsi sebaiknya.
             </p>
           </div>
 
